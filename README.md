@@ -32,7 +32,7 @@ The credentials used to connect to the GCS bucket needs to have the storage.buck
 
 All options that can be provided are shown below.
 
-```json
+```js
 {
   // path where resources get loaded from, or a function
   // returning a path:
