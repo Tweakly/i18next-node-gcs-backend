@@ -1,5 +1,5 @@
 {
-  "name": "i18next-node-gcs-backend",
+  "name": "@tweakly/i18next-node-gcs-backend",
   "version": "1.0.0",
   "description": "A Google Cloud Storage (buckets) backend for i18next",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tweakly/i18next-node-gcs-backend.git"
+    "url": "git+https://github.com/tweakly/i18next-node-gcs-backend.git"
   },
   "keywords": [
     "i18next",
@@ -45,7 +45,8 @@
   },
   "files": [
     "dist/**",
-    "src/**"
+    "src/**",
+    "tsconfig.json"
   ],
   "ava": {
     "files": [
