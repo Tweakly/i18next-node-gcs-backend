@@ -1,3 +1,5 @@
+[![npm package link](https://img.shields.io/npm/v/@tweakly/i18next-node-gcs-backend)](https://www.npmjs.com/package/@tweakly/i18next-node-gcs-backend)
+
 # Introduction 
 This is a backend for i18next that loads translations from Google Cloud Storage for use in Node.js.
 
