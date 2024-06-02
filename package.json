@@ -1,0 +1,70 @@
+{
+  "name": "i18next-node-gcs-backend",
+  "version": "1.0.0",
+  "description": "A Google Cloud Storage (buckets) backend for i18next",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts",
+    "test": "c8 --100 ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tweakly/i18next-node-gcs-backend.git"
+  },
+  "keywords": [
+    "i18next",
+    "i18n",
+    "google cloud storage",
+    "gcs",
+    "gcp",
+    "backend",
+    "typescript"
+  ],
+  "author": "Lars Ivar Igesund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tweakly/i18next-node-gcs-backend/issues"
+  },
+  "homepage": "github.com/tweakly/i18next-node-gcs-backend",
+  "devDependencies": {
+    "@septh/ts-run": "^1.2.4",
+    "@types/node": "^20.12.7",
+    "ava": "^6.1.3",
+    "c8": "^9.1.0",
+    "i18next": "^23.11.2",
+    "testcontainers": "^10.9.0",
+    "tsup": "^8.0.2",
+    "typescript": "5.4.3"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.11.1"
+  },
+  "peerDependencies": {
+    "i18next": "^23.11.2"
+  },
+  "files": [
+    "dist/**",
+    "src/**"
+  ],
+  "ava": {
+    "files": [
+      "test/**/*.ts"
+    ],
+    "extensions": {
+      "ts": "module",
+      "mts": "module"
+    },
+    "nodeArguments": [
+      "--import=@septh/ts-run/register",
+      "--trace-deprecation"
+    ]
+  },
+  "c8": {
+    "exclude": [
+      "test/**/*.ts",
+      "src/gcp-specific.ts"
+    ]
+  },
+  "packageManager": "pnpm@9.1.4+sha512.9df9cf27c91715646c7d675d1c9c8e41f6fce88246f1318c1aa6a1ed1aeb3c4f032fcdf4ba63cc69c4fe6d634279176b5358727d8f2cc1e65b65f43ce2f8bfb0"
+}
