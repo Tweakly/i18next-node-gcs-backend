@@ -32,10 +32,10 @@ importers:
         version: 10.9.0
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(typescript@5.4.3)
+        version: 8.0.2(typescript@5.5.3)
       typescript:
-        specifier: 5.4.3
-        version: 5.4.3
+        specifier: 5.5.3
+        version: 5.5.3
 
 packages:
 
@@ -1649,8 +1649,8 @@ packages:
     resolution: {integrity: sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==}
     engines: {node: '>=10'}
 
-  typescript@5.4.3:
-    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
+  typescript@5.5.3:
+    resolution: {integrity: sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3354,7 +3354,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsup@8.0.2(typescript@5.4.3):
+  tsup@8.0.2(typescript@5.5.3):
     dependencies:
       bundle-require: 4.0.3(esbuild@0.19.12)
       cac: 6.7.14
@@ -3371,7 +3371,7 @@ snapshots:
       sucrase: 3.35.0
       tree-kill: 1.2.2
     optionalDependencies:
-      typescript: 5.4.3
+      typescript: 5.5.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -3380,7 +3380,7 @@ snapshots:
 
   type-fest@0.13.1: {}
 
-  typescript@5.4.3: {}
+  typescript@5.5.3: {}
 
   undici-types@5.26.5: {}
 
