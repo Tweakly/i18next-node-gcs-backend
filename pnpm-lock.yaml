@@ -32,10 +32,10 @@ importers:
         version: 10.9.0
       tsup:
         specifier: ^8.0.2
-        version: 8.2.4(typescript@5.4.3)(yaml@2.4.2)
+        version: 8.2.4(typescript@5.5.4)(yaml@2.4.2)
       typescript:
-        specifier: 5.4.3
-        version: 5.4.3
+        specifier: 5.5.4
+        version: 5.5.4
 
 packages:
 
@@ -1702,8 +1702,8 @@ packages:
     resolution: {integrity: sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==}
     engines: {node: '>=10'}
 
-  typescript@5.4.3:
-    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
+  typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3448,7 +3448,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsup@8.2.4(typescript@5.4.3)(yaml@2.4.2):
+  tsup@8.2.4(typescript@5.5.4)(yaml@2.4.2):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -3467,7 +3467,7 @@ snapshots:
       sucrase: 3.35.0
       tree-kill: 1.2.2
     optionalDependencies:
-      typescript: 5.4.3
+      typescript: 5.5.4
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -3478,7 +3478,7 @@ snapshots:
 
   type-fest@0.13.1: {}
 
-  typescript@5.4.3: {}
+  typescript@5.5.4: {}
 
   undici-types@5.26.5: {}
 
