@@ -14,7 +14,7 @@ importers:
     devDependencies:
       '@septh/ts-run':
         specifier: ^1.2.4
-        version: 1.2.4
+        version: 1.2.6
       '@types/node':
         specifier: ^22.4.1
         version: 22.4.1
@@ -339,8 +339,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@septh/ts-run@1.2.4':
-    resolution: {integrity: sha512-2to3CT87txDaljjLylME/V9qlU+w39rrVGQnVTJSF+uQe1X3xhCOL4ueXWjkEIPDN8fGLgH0xkgwes0K8A/nLQ==}
+  '@septh/ts-run@1.2.6':
+    resolution: {integrity: sha512-0ECYSjYaXrCZnVua03OH+b9B8Gesg5hEFHrvyMxoLrrh4Z6Fwo9ddkjOxXqGEoM8sS7JHCB5aaB9/7NXdfcCOA==}
     engines: {node: '>=21 || ^20.6.0 || ^18.19.0'}
     hasBin: true
 
@@ -2022,7 +2022,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.20.0':
     optional: true
 
-  '@septh/ts-run@1.2.4': {}
+  '@septh/ts-run@1.2.6': {}
 
   '@sindresorhus/merge-streams@2.3.0': {}
 
