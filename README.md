@@ -79,7 +79,14 @@ All options that can be provided are shown below.
   // variable BACKEND_GOOGLE_APPLICATION_CREDENTIALS_PATH.
   // NOTE: When deployed in GCP, credentials will if not provided be picked up from the
   //   cloud execution environment by the underlying client libraries.      
-  googleApplicationCredentialsPath: "/somepath/credentials.json"
+  googleApplicationCredentialsPath: "/somepath/credentials.json",
+        
+  // Enable debug output. This will print out debug information to the console, unless an alternate
+  // logger is provided. Default is false.
+  debugLog: false,
+        
+  // An alternate logger to use for debug output. If not provided, console.log will be used.
+  logger: console.log,
 }
 ```
 

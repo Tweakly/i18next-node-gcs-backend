@@ -83,7 +83,8 @@ test("GCP integration, options in constructor", async (t) => {
         } as Interpolator } as Services, {
         bucketName,
         apiEndpoint,
-        loadPath: ""
+        loadPath: "",
+        debugLog: true
     });
 
     await testBackend(t, backend);
@@ -187,7 +188,8 @@ test("that callback get error on missing file", async (t) => {
         apiEndpoint,
         loadPath: () => {
             return "foo";
-        }
+        },
+        debugLog: true
     });
 
     try {
@@ -210,6 +212,10 @@ test("that bad JSON in translation files cause error", async (t) => {
         apiEndpoint,
         loadPath: () => {
             return "";
+        },
+        debugLog: true,
+        logger: (msg) => {
+            console.log("Debug log");
         }
     });
 
