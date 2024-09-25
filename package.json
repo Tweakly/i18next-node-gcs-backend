@@ -1,6 +1,6 @@
 {
   "name": "@tweakly/i18next-node-gcs-backend",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Google Cloud Storage (buckets) backend for i18next",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
