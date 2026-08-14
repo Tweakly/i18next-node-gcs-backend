@@ -1,5 +1,4 @@
-import { type Bucket, type File, Storage } from '@google-cloud/storage';
-import { StorageOptions } from '@google-cloud/storage/build/cjs/src/storage';
+import { type Bucket, type File, Storage, type StorageOptions } from '@google-cloud/storage';
 import { readFile } from 'fs/promises';
 
 /**

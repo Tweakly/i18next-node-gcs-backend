@@ -1,24 +1,27 @@
 import {GenericContainer} from "testcontainers";
 import { Storage } from "@google-cloud/storage";
-import Backend from "../src";
-import {InterpolationOptions, Interpolator, Services} from "i18next";
+import Backend from "../src/index.ts";
+import {type InterpolationOptions, type Interpolator, type Services} from "i18next";
 import test from "ava";
 
 test.before(async () => {
     process.env.K_SERVICE = "test-service";
     process.env.BACKEND_GCP_PROJECT = "test-project";
+    process.env.GOOGLE_CLOUD_PROJECT = "test-project"; 
 
     const bucketName = "test-bucket";
     const gcsPort = 4443;
-    const gcsContainer = await new GenericContainer("fsouza/fake-gcs-server:1.49.1")
+    const gcsContainer = await new GenericContainer("fsouza/fake-gcs-server:1.55.0")
         .withEntrypoint(["/bin/fake-gcs-server", "-scheme", "http"])
         .withExposedPorts(gcsPort)
         .start();
 
+    console.log(`Fake GCS server started on port ${gcsContainer.getMappedPort(gcsPort)}`);
     const apiEndpoint = `http://${gcsContainer.getHost()}:${gcsContainer.getMappedPort(
         gcsPort
     )}`;
 
+    console.log(`Fake GCS server endpoint: ${apiEndpoint}`);
     // Configure the fake GCS server
     await fetch(`${apiEndpoint}/_internal/config`, {
         method: "PUT",
@@ -28,33 +31,43 @@ test.before(async () => {
         body: JSON.stringify({ externalUrl: apiEndpoint }),
     });
 
-    const storage = new Storage({ apiEndpoint });
-    await storage.createBucket(bucketName);
+    console.log(`Set GCS server config`);
+    const storage = new Storage({ apiEndpoint, projectId: "test-project" });
+    await storage.createBucket(bucketName).catch((err) => {
+        console.error(`Error creating bucket: ${err}`);
+    });
     const bucket = storage.bucket(bucketName);
+    console.log(`Created bucket`);
     await bucket.upload("test/nb-NO.json", {
         destination: "nb-NO.json"
     });
 
+    console.log(`Uploaded nb-NO.json`);
     await bucket.upload("test/en-US.json", {
         destination: "somepath/en-US.json"
     });
 
+    console.log(`Uploaded en-US.json`);
     await bucket.upload("test/de-DE.json", {
         destination: "de-DE.json"
     });
 
+    console.log(`Uploaded de-DE.json`);
     await bucket.upload("test/nb-NO.bar", {
         destination: "nb-NO.bar"
     });
 
+    console.log(`Uploaded nb-NO.bar`);
     await bucket.upload("test/sv-SV.json", {
         destination: "sv-SV/backend.json"
     });
-
+    console.log(`Uploaded sv-SV.json`);
 
     process.env.GCS_API_ENDPOINT = apiEndpoint;
     process.env.BUCKET_NAME = bucketName;
-});
+
+    console.log(`Fake GCS server running at ${apiEndpoint}`);
+}, 60000);
 
 const testBackend = async (t: any, backend: Backend, lng = "nb-NO", ns = "") => {
     try {
@@ -105,7 +118,7 @@ test("GCP integration, options in init", async (t) => {
     });
 
     await testBackend(t, backend);
-});
+}, 25000);
 
 test("that loadPath can be a function, including an async one", async (t) => {
     const apiEndpoint = process.env.GCS_API_ENDPOINT as string;

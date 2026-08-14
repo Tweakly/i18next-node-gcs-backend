@@ -1,13 +1,18 @@
-import {BackendModule, CallbackError, ReadCallback, Services} from "i18next";
+import {
+    type BackendModule, 
+    type CallbackError, 
+    type ReadCallback, 
+    type Services
+} from "i18next";
 import {extname} from "path";
 import {Bucket} from "@google-cloud/storage";
 import {
     buildConfiguration,
     constructGCSFileReference,
-    GCPBucketIdentifier,
+    type GCPBucketIdentifier,
     getGCSBucket, readBucketFile,
     verifyConfiguration
-} from "./gcp-specific";
+} from "./gcp-specific.ts";
 
 export type GcpBackendLogger = (message: string, ...args: any[]) => void;
 
