@@ -38,7 +38,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@google-cloud/storage": "^7.21.0"
+    "@google-cloud/storage": "^8.0.0"
   },
   "peerDependencies": {
     "i18next": "^23.11.2"
